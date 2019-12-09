@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router-dom';
+import DogListContainer from './components/DogListContainer'
+import DogBreedImagesContainer from './components/DogBreedImagesContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <Route exact path='/' component={DogListContainer} />
+        <Route path="/dog-breeds/:breed" component={DogBreedImagesContainer} />
+      </main>
     </div>
   );
 }
